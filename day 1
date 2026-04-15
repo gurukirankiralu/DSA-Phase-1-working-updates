@@ -1,0 +1,61 @@
+package com.product.phase1;
+
+public class Basic {
+    public void evenOdd(int num){
+        if((num&1)==0){
+            System.out.println("the given number is even");
+        }
+        else{
+            System.out.println("the given number is odd");
+        }
+    }
+    public void evenOdd1(int num){
+        if((num/2)==(num/2.0)){
+            System.out.println("the given number is even");
+        }
+        else{
+            System.out.println("the given number is odd");
+        }
+    }
+    public void evenOdd2(int num){
+        if((num/2)==((num+1)/2)){
+            System.out.println("the given number is even");
+        }
+        else{
+            System.out.println("the given number is odd");
+        }
+
+    }
+    public void evenOdd3(int num){
+        while(num>0){
+            num-=2;
+        }
+        if(num==0){
+            System.out.println("even");
+        }
+        else{
+            System.out.println("odd");
+        }
+    }
+    public void evenOdd4(int num){
+        if(num>>1<<1==num){
+            System.out.println("even");
+        }
+        else{
+            System.out.println("odd");
+        }
+    }
+    void powerOfTwo(int num){
+        if((num&(num-1))==0){
+            System.out.println("power of 2");
+        }
+        else{
+            System.out.println(" not power of 2");
+        }
+    }
+    public static void main(String[]args){
+        Basic obj=new Basic();
+        //obj.evenOdd4(27002);
+        obj.powerOfTwo(9);
+    }
+}
