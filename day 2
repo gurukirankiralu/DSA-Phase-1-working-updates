@@ -1,0 +1,57 @@
+public class Day2 {
+    void multiplicationTable(int n){
+        for(int i=1;i<11;i++){
+            System.out.println(n+" * "+i+" = "+i*n);
+        }
+    }
+    void maximum(int a,int b){
+        if(a>b){
+            System.out.println(" max is a");
+        }
+        else if (b>a){
+            System.out.println("max is b");
+        }
+        else{
+            System.out.println("equal");
+        }
+    }
+    public static void main(String[]args) {
+        System.out.printf("%d %b %o %x %c %f \n",90,90,90,90,90,90f);
+        System.out.printf("%d \n",82345999996789L);
+        System.out.printf("%f",(float)'A');
+        //conditions and loopings
+        for(int i=0;i<5;) {
+            if (i == 3) {
+                continue;
+            }
+            System.out.println(i);
+            i++;
+        }
+        for(int i=0;i<5;i++){
+            System.out.print(i+" ");
+        }
+        for(int i=1;i<5;i++){
+            if(i==1){
+                System.out.println();
+            }
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        for(int i=5;i>0;i--){
+            System.out.print(i+" ");
+        }
+        Day2 obj=new Day2();
+        obj.multiplicationTable(5);
+        obj.maximum(23,23);
+        char a=192;
+        System.out.println(a);
+        byte minValue=Byte.MIN_VALUE;
+        byte u=(byte) (minValue-1);
+        System.out.println(u);
+        int intMin=Integer.MIN_VALUE-1;
+        System.out.println(intMin);
+
+
+
+    }
+}
