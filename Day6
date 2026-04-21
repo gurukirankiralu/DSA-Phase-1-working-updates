@@ -1,0 +1,178 @@
+public class Day6 {
+//int deleteFromFirst(int num,int n){
+//    int count=count(num);
+//    int an=count-n;
+//    int bn=count-an-1;
+//    int first=num/power(10,count-bn);
+//    int last=num%p
+//}
+    public int reverseCouple(int num){
+        int last=0;
+        boolean isOdd=false;
+        if(count(num)%2!=0){
+            isOdd=true;
+            last=num%10;
+            num/=10;
+        }
+        int result=0;
+        while(num!=0){
+            int count=count(num);
+            int digit=num/power(10,count-2);
+            result=result*10+digit%10;
+            digit=digit/10;
+            result=result*10+digit%10;
+            num=num%power(10,count-2);
+        }
+        if(isOdd){
+            result=result*10+last;
+        }
+        return result;
+    }
+    static int deleteLastNNumber(int num,int n){
+        return (int) (num/Math.pow(10,n));
+    }
+    int count(int num){
+        int count =0;
+        while(num>0){
+            count++;
+            num/=10;
+        }
+        return count;
+    }
+    int power(int base,int expo){
+        int result=1;
+        for(int i=0;i<expo;i++){
+            result*=base;
+        }
+        return result;
+    }
+    public int deleteNthNum(int num,int n){
+        return 0;
+
+
+    }
+    public int concat(int num,int n){
+        int temp=n;
+        int count =0;
+        while(temp>0){
+          count++;
+            temp/=10;
+        }
+        return (int)(num*Math.pow(10,count)+n);
+
+    }
+    public int concatFirst(int num,int n){
+        int temp=num;
+        int count =0;
+        while(temp>0){
+            count++;
+            temp/=10;
+        }
+        return (int)(n*Math.pow(10,count)+num);
+    }
+    public int concatFirstLast(int num,int n){
+        int countNum=count(num);
+        int countN=count(n);
+        int first =(int)(n*Math.pow(10,countNum)+num);
+        return (int)(first*Math.pow(10,countN)+n);
+
+    }
+    public int concatMiddele(int num,int n){
+        boolean isNegitive=false;
+        if(num<0){
+            isNegitive=true;
+            num*=-1;
+        }
+        int cnum=count(num);
+        int half=cnum/2;
+        int cn=count(n);
+        int first=num/power(10,cnum-half);
+        int last=num%power(10,cnum-half);
+        int lc=count(last);
+        if(isNegitive){
+            return ((first*power(10,cn)+n)*power(10,lc)+last)*-1;
+        }
+        return (first*power(10,cn)+n)*power(10,lc)+last;
+    }
+    void creatEvenOdd(int num){
+        int even=0;
+        int odd=0;
+        while(num!=0){
+            int count=count(num);
+            int digit=num/power(10,count-1);
+            if(digit%2==0){
+                even=even*10+digit;
+                num=num%power(10,count-1);
+            }
+            else{
+                odd=odd*10+digit;
+                num=num%power(10,count-1);
+            }
+        }
+        System.out.println("even :"+even);
+        System.out.println("odd :"+odd);
+
+    }
+    long addAlternative(int num,int n){
+        int countN=count(n);
+        long result=0;
+        while(num!=0){
+            int countNum=count(num);
+            int digit=num/power(10,countNum-1);
+            result=((result*10+digit)*power(10,countN))+n;
+          //  System.out.println(result);
+            num=num%power(10,countNum-1);
+        }
+        return result;
+    }
+    public int sumOfNumber(int num){
+        int totalSum=0;
+        while(num>0){
+            int digit=num%10;
+            int sum=0;
+            for(int i=1;i<=digit;i++){
+                sum+=i;
+            }
+            totalSum+=sum;
+            num/=10;
+        }
+        return totalSum;
+    }
+    int first(int num){
+        return num/power(10,count(num)-1);
+    }
+    int second(int num){
+        return  (num/power(10,count(num)-2))%10;
+
+    }
+    int powerWithNext(int num){
+        int result=0;
+        int first=num/power(10,count(num)-1);
+        int last=num%10;
+        while (num>9){
+            result=result+power(first(num),second(num));
+            //System.out.println(result);
+            num=num%power(10,count(num)-1);
+        }
+        result+=power(last,first);
+        return result;
+    }
+    public static void main(String[]args){
+        Day6 obj=new Day6();
+//        int num=obj.deleteLastNNumber(12345,2);
+//        System.out.println(num);
+//        System.out.println(obj.concat(12345,77));
+//        System.out.println(obj.concatFirst(12345,77));
+//        System.out.println(obj.concatFirstLast(12345,77));
+//        System.out.println(obj.power(2,3));
+//        System.out.println(obj.concatMiddele(-1234568,77));
+//        obj.creatEvenOdd(12345678);
+//        System.out.println(obj.addAlternative(12345678,7));
+//        //System.out.println(obj.sumOfNumber(23));
+//        System.out.println(obj.powerWithNext(123));
+//        //System.out.println(obj. power(obj.first(23),obj.second(23)));
+        System.out.println(obj.reverseCouple(1));
+
+
+    }
+}
