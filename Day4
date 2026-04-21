@@ -1,0 +1,27 @@
+public class Day4 {
+    public double discount(int amt){
+        if(amt<500){
+            return amt;
+        }
+        if(amt>=500&&amt<100){
+            amt*=0.9;
+        }
+        else if(amt>=1000&&amt<1500){
+            amt*=0.8;
+        }
+        else{
+            amt-=50;
+            amt-=200;
+            amt*=0.85;
+        }
+        return amt;
+    }
+    public static void main(String[]args){
+        Day4 obj=new Day4();
+        char ch=(char)(-1);
+        char ch1 = (char) (65535);
+        System.out.println((int)ch1);
+        System.out.println(Integer.toBinaryString(ch1));
+        System.out.println(Integer.toBinaryString(ch1));
+    }
+}
