@@ -1,0 +1,45 @@
+package com.product.phase1;
+public class Day5 {
+    public void firstDigit(int n){
+        int count=(int)Math.log10((double) n+1);
+        System.out.println(count);
+        int power=(int) Math.pow(10,count);
+        while(n>0){
+            int first=n/power;
+//            if(first%2==0){
+//                System.out.println(first);
+//            }
+            System.out.println(first);
+            n=n%power;
+            power/=10;
+
+        }
+
+    }
+    public int removeNthDigitFromFirst(int num,int n){
+        int numberOfDigits=(int)(Math.log10(num))+1;
+        int afterDigit=numberOfDigits-n;
+        int beforeDigit=numberOfDigits-(n-1);
+        int extractBefore=(int)(num/Math.pow(10,numberOfDigits-beforeDigit));
+        int extractafter=(int)(num%Math.pow(10,afterDigit));
+        return (int)(extractBefore*Math.pow(10,beforeDigit)+extractafter);
+    }
+    public int  removeNthDigitFromLast(int num,int n){
+        int numberOfDigits=(int)(Math.log10(num))+1;
+        int beforeDigit=numberOfDigits-n;
+        int afterDigit=numberOfDigits-beforeDigit-1;
+        int extractBefore=(int)(num/Math.pow(10,numberOfDigits-beforeDigit));
+        int extractafter=(int)(num%Math.pow(10,afterDigit));
+        return (int)(extractBefore*Math.pow(10,afterDigit)+extractafter) ;
+    }
+    public static void main(String[]args){
+        Day5 obj=new Day5();
+       // obj.firstDigit(123456789);
+//        int n=2345677;
+//        int ans=(int)Math.log10((double) n)+1;
+//        System.out.println(ans);
+      // System.out.println( obj.removeNthDigitFromFirst(123456,3));
+        System.out.println( obj.removeNthDigitFromLast(1234567,3));
+
+    }
+}
