@@ -1,0 +1,82 @@
+package com.product.phase1;
+public class Day3 {
+    public void asending(int a,int b,int c){
+        int max=Integer.MAX_VALUE;
+        int secMax=Integer.MIN_VALUE;
+        int thirdMax=Integer.MIN_VALUE;
+        if(a>b&&a>c){
+            max=a;
+            if(b>c){
+                secMax=b;
+                thirdMax=c;
+            }
+            else {
+                secMax=c;
+                thirdMax=b;
+            }
+        }
+        else if(b>a&&b>c){
+            max=b;
+            if(a>c){
+                secMax=a;
+                thirdMax=c;
+            }
+            else {
+                secMax=c;
+                thirdMax=a;
+            }
+        }
+        else{
+            max=c;
+            if(a>b){
+                secMax=a;
+                thirdMax=b;
+            }
+            else {
+                secMax=b;
+                thirdMax=a;
+            }
+        }
+        System.out.println(thirdMax+" "+secMax+" "+ max);
+
+    }
+    public void oddEvenPN(int n){
+        if(n>0){
+            if(n%2==0){
+                System.out.println("positive even");
+            }
+            else{
+                System.out.println("positive odd");
+            }
+        }
+        else if(n<0){
+            if(n%2==0){
+                System.out.println("negative even");
+            }
+            else{
+                System.out.println("negative odd");
+            }
+        }
+        else {
+            System.out.println("zero");
+        }
+    }
+    public static void main(String[]args){
+//        Day3 obj=new Day3();
+//        byte a=Byte.MAX_VALUE;
+//        System.out.println((byte)(a+78));
+//        short s=Short.MAX_VALUE;
+//        System.out.println(s);
+//        int i=Integer.MAX_VALUE;
+//        System.out.println(i);
+//        long l=Long.MAX_VALUE;
+//        System.out.println(l+1);
+//        char b=(char) -43;
+//        System.out.println((int)b);
+       // obj.asending(30,10,20);
+        byte b1=(byte)(129);
+        System.out.println(b1);
+        System.out.println(-2%2);
+       // obj.oddEvenPN(-18);
+    }
+}
