@@ -1,0 +1,722 @@
+package com.numbers.dsa;
+
+public class NumberLogic {
+    //1)sum of n natural numbers.
+
+    static int sumOfNumbers(int n){
+        int sum=0;
+        for(int i=1;i<=n;i++){
+            sum+=i;
+        }
+        return sum;//return (n*n+1)/2;
+
+    }
+
+    //2)compute 1/n!.
+    static double oneByFact(int n){
+        return (double) 1/factorial(n);
+    }
+    //power
+    static int power(int base,int expo){
+        int pow=1;
+        while(expo>0){
+            pow*=base;
+            expo--;
+        }
+        return pow;
+    }
+    //3) compute x^n/n!.
+    static int  poereByFactorial(int x,int n){
+        return power(x,n/factorial(n));
+    }
+    //4)count the number of digits in an integer.
+    static int count(int n){
+        if(n<0){
+            n*=-1;
+        }
+        if(n<10){
+            return 1;
+        }
+        int count=0;
+        while(n>0){
+            count++;
+            n/=10;
+        }
+        return count;
+    }
+    //5)sum all digits of a number.
+    static int sumOfAllDigit(int num){
+        if(num<0){
+            num*=-1;
+        }
+        if(num<10){
+            return num;
+        }
+        int sum=0;
+        while (num>0){
+            sum+=num%10;
+            num/=10;
+        }
+        return sum;
+
+    }
+    // 6)reverse a given number.
+    static int reverse(int num){
+        int rev=0;
+        while(num>0){
+            rev=rev*10+num%10;
+            num/=10;
+        }
+        return rev;
+    }
+    //G.C.D or HCF of two numbers.
+    static int larger(int a,int b){
+        if(a>b){
+            return a;
+        }
+        return b;
+    }
+    // 7)G.C.D or HCF of two numbers.
+    static int GCD(int a,int b){
+        while(b!=0){
+            int rem=a%b;
+            a=b;
+            b=rem;
+        }
+        return a;
+    }
+    //8) LCM of two numbers
+    static int LCM(int a,int b){
+        return (a*b)/GCD(a,b);
+    }
+    //9) factorial
+    static int factorial(int n){
+        int fact=1;
+        while(n>0){
+            fact*=n;
+            n-=1;
+        }
+        return fact;
+    }
+    // 10)prime Factors of number
+    static void primeFactor(int num){
+        int prime=2;
+        while(num>1){
+            if(num%prime==0){
+                System.out.print(prime);
+                num/=prime;
+            }
+            else {
+                prime++;
+            }
+            if(prime*prime>num&&num>1){
+                System.out.println(num);
+                break;
+            }
+        }
+    }
+    //a palindrome or not.
+    static boolean isPalindrome (int num){
+        return num==reverse(num);
+    }
+    //12)number is prime or not.
+    static boolean isprime(int num){
+        if(num==0||num==1){
+            return false;
+        }
+        for(int i=2;i<= Math.sqrt(num);i++){
+            if(num%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    // 13)a perfect square
+    static boolean isPerfectSquare(int num){
+        for(int i=1;i*i<=num;i++){
+            if(i*i==num){
+                return true;
+            }
+        }
+        return false;
+    }
+    // 14)Armstrong
+    static boolean armstrong(int num){
+        int count=count(num);
+        int original=num;
+        int arm=0;
+        while (num>0){
+            int last=num%10;
+            arm=arm+power(last,count);
+            num/=10;
+        }
+        if(arm==original){
+            return true;
+        }
+        return false;
+    }
+    // 15)strong number
+    static  boolean strongNumber(int num){
+        int sum=0;
+        int original=num;
+        while(num>0){
+            sum+=factorial(num%10);
+            num/=10;
+        }
+        if(sum==original){
+            return true;
+        }
+        return false;
+    }
+
+// 16)perfect number
+    static boolean perfectNumber(int num){
+        if(num<=0){
+            return false;
+        }
+        int sum=0;
+        for(int i=1;i<num;i++){
+            if(num%i==0){
+                sum+=i;
+            }
+        }
+        if(sum==num){
+            return true;
+        }
+        return false;
+    }
+    //17)Harshad number
+    static boolean harshand(int num){
+        if(num<0){
+            num*=-1;
+        }
+        if(num<10){
+            return true;
+        }
+        int sum=0;
+        int temp=num;
+        while(temp>0){
+            sum+=temp%10;
+            temp/=10;
+        }
+        if(num%sum==0){
+            return true;
+        }
+        return false;
+    }
+    //18) Abundant number
+    static boolean abundant(int num){
+        if(num<0){
+            num*=-1;
+        }
+        int sum=0;
+        for(int i=1;i<=num/2;i++){
+            if(num%i==0){
+                sum+=i;
+            }
+        }
+        if(sum>num){
+            return true;
+        }
+        return false;
+    }
+    //19) Automorphic
+    static  boolean automorphic(int num){
+        if(num<0){
+            num*=-1;
+        }
+        int digit=count(num);
+        if(num==(num*num)%power(10,digit)){
+            return true;
+        }
+        return false;
+    }
+    //20)Magic Number
+    static boolean magic(int num){
+        if(num<0){
+            num*=-1;
+        }
+        if(num==0){
+            return false;
+        }
+        while(num>9){
+            num=sumOfAllDigit(num);
+        }
+        return num==1;
+    }
+    static int sumOfDiviser(int num){
+        if(num<0){
+            num*=-1;
+        }
+        int sum=0;
+        for(int i=1;i<=num;i++){
+            if(num%i==0){
+                sum+=i;
+            }
+        }
+        return sum;
+    }
+    //21)Friendly pair
+    static boolean friendly(int a,int b){
+        return (sumOfDiviser(a)*b==sumOfDiviser(b)*a);
+    }
+    // 22)Neon Number
+    static boolean neonNumber(int num){
+        int squar=num*num;
+        return num==sumOfAllDigit(squar);
+    }
+    static int productOfDigits(int num){
+        int product=1;
+        while(num>0){
+            product*=num%10;
+            num/=10;
+        }
+        return product;
+    }
+    //23) Spy Number
+    static boolean spyNumber(int num){
+        return sumOfAllDigit(num)==productOfDigits(num);
+    }
+    static int sumOfSquareDigit(int num){
+        int sum=0;
+        while(num>0){
+            int digit=num%10;
+            sum+=digit*digit;
+            num/=10;
+        }
+        return sum;
+    }
+    // 24)Happy Number
+    static boolean happy(int num){
+        int original=num;
+        while (num!=1){
+            num=sumOfSquareDigit(num);
+            if(num==4){
+                return false;
+            }
+        }
+        return true;
+
+    }
+    //25)Sunny Number
+    static boolean sunny(int num){
+        return isPerfectSquare(num+1);
+    }
+    //26)Disarium Number
+    static boolean disariumNumber(int num){
+        if(num<0){
+            num*=-1;
+        }
+        if(num==0){
+            return false;
+        }
+        if(num<10){
+            return true;
+        }
+        int original=num;
+        int count =count(num);
+        int disaium=0;
+        while (count>0){
+            int digit=num%10;
+            disaium+=power(digit,count);
+            count--;
+            num/=10;
+        }
+        return disaium==original;
+    }
+    //27 Pronic Number
+    static boolean pronic(int num){
+        for(int i=1;i<Math.sqrt(num);i++){
+            if(i*i+i==num){
+                return true;
+            }
+        }
+        return false;
+    }
+    static int cube(int num){
+        return num*num*num;
+    }
+    //28)Trimorphic Number
+    static boolean trimorphic(int num){
+        int digit=count(num);
+        return cube(num)%power(10,digit)==num;
+    }
+    // 29)Evil Number
+    static boolean evilNumber(int num){
+        int count=0;
+        while(num>0){
+            int rem=num%2;
+            if(rem==1){
+                count++;
+            }
+            num/=2;
+        }
+        return count%2==0;
+    }
+    //30) all palindrome numbers present within a range
+    static void palindromeRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(i<10){
+                System.out.print(i+" ");
+            }
+            else {
+                if (isPalindrome(i)) {
+                    System.out.print(i+" ");
+                }
+            }
+        }
+        System.out.println();
+    }
+    //31) primes numbers present within a given range
+    static void primeRange(int from,int to) {
+        for(int i=from;i<=to;i++){
+            if(isprime(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 32)perfect square numbers present within a range
+    static void perfectSquareRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(isPerfectSquare(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 33)Armstrong numbers present within a given range
+    static void armStrongRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(armstrong(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //34)Strong numbers present within a given
+    static void StrongRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(strongNumber(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //35) Perfect numbers present within a given range
+    static void perfectRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(perfectNumber(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //36) Harshad numbers present within a given range
+    static void harshandRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(harshand(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 37)Abundant numbers present within a given
+    static void abundantRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(abundant(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //38)Automorphic numbers present within a range
+    static void automorphicRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(automorphic(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 39)Magic numbers present within a given range
+    static void magicRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(magic(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 40)Neon numbers present within a given range
+    static void neonRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(neonNumber(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //41)Spy numbers present within a given range.
+    static void spyRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(spyNumber(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 42)Happy numbers present within a given
+    static void happyRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(happy(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //43)Sunny numbers present within a given
+    static void sunnyRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(sunny(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //44)Disarium numbers present within a range
+    static void disariumRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(disariumNumber(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //45) Pronic numbers present within a given
+    static void pronicRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(pronic(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //46)Trimorphic numbers present within a given
+    static void trimorphicRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(trimorphic(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    //47)Evil numbers present within a given range.
+    static void evilRange(int from,int to){
+        for(int i=from;i<=to;i++){
+            if(evilNumber(i)){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    // 48)Find the nth palindrome number.
+    static int nthPalindrome(int n){
+        int count =0;
+        int i=1;
+        while (true){
+            if(isPalindrome(i)){
+                count++;
+            }
+            if(count==n){
+                return i;
+            }
+            i++;
+        }
+    }
+   static void largest3happy(){
+        int c=0;
+        for(int i=999;i>99;i--){
+            if(happy(i)){
+                System.out.println(i);
+                c++;
+            }
+            if(c==3){
+                break;
+            }
+        }
+    }
+    static void nthHappy(int n){
+        int c=0;
+        boolean isAlive=false;
+        for(int i=100;i<1000;i++){
+            if(happy(i)){
+                c++;
+            }
+            if(c==n){
+                System.out.println("happy number is "+i);
+                isAlive=true;
+                break;
+            }
+        }
+        if(!isAlive){
+            System.out.println("happy is not exists");
+        }
+    }
+    static int countEven(int num){
+        int count =0;
+        while (num>0){
+            int digit =num%10;
+            while (digit==0){
+                num/=10;
+                digit=num%10;
+            }
+            if(digit%2==0){
+                count++;
+            }
+            num/=10;
+        }
+        return count;
+    }
+    static int nDigitHappyEven(int n){
+        for(int i=power(10,n-1);i<power(10,n);i++) {
+            if (happy(i)) {
+                if (countEven(i) >= 2) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+
+    //49 nth prime number
+    static int nthPrime(int n){
+        int c=0;
+        for(int i=2;c<n;i++){
+            if(isprime(i)){
+                c++;
+            }
+            if(c==n){
+                return i;
+            }
+        }
+        return -1;
+    }
+    static int squreroot(int num){
+        int prev=0;
+        for( int i=1;i*i<=num;i++){
+             if(i*i==num){
+                 return i;
+             }
+             prev=i;
+        }
+        return  prev;
+    }
+    static  boolean prime2(long num){
+        if(num<2){
+            return false;
+        }
+        if(num%2==0||num%3==0){
+            return false;
+        }
+        for(long i=5;(i*i)<=num;i+=6){
+            if(num%i==0||num%i+2==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    static long power2(int base,int expo){
+        long pow=1;
+        while(expo>0){
+            pow*=base;
+            expo--;
+        }
+        return pow;
+    }
+
+    static long  nDigitNthPrime(int n) {
+        int c=1;
+        for (long i = power2(10, n - 1); i < power2(10, n); i++) {
+            if(prime2(i)){
+                c++;
+            }
+            if(c==n){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[]args){
+//       System.out.println( NumberLogic.sumOfNumbers(5));
+//       System.out.println(NumberLogic.factorial(5));
+//       System.out.println(NumberLogic.oneByFact(5));
+       //System.out.println((double) 1/120);
+//        System.out.println(NumberLogic.power(2,5));
+//        System.out.println(NumberLogic.poereByFactorial(7,2));
+//        System.out.println(NumberLogic.count(-1987766780));
+     // System.out.println(NumberLogic.sumOfAllDigit(1234));
+//        System.out.println(NumberLogic.reverse(12345));
+//        System.out.println(NumberLogic.GCD(48,18));
+//        System.out.println(NumberLogic.LCM(3,4));
+//        NumberLogic.primeFactor(84);
+//        System.out.println(isPalindrome(1221));
+//        System.out.println(isprime(55));
+//        System.out.println(isPerfectSquare(100));
+//        System.out.println(armstrong(153));
+//        System.out.println(strongNumber(145));
+//        System.out.println(perfectNumber(28));
+//        System.out.println(harshand(12));
+//        System.out.println(abundant(12));
+//        System.out.println(automorphic(5));
+//        System.out.println(magic(50113));
+//        System.out.println(friendly(10,14));
+//        System.out.println(neonNumber(9));
+//        System.out.println(spyNumber(22));
+//        System.out.println(happy(19));
+//        System.out.println(spyNumber(9));
+//        System.out.println(sunny(8));
+   //     System.out.println(disariumNumber(25));
+      //  System.out.println(pronic(31));
+//        System.out.println(trimorphic(5));
+//        System.out.println(evilNumber(7));
+//        palindromeRange(1,100);
+//        primeRange(1,100);
+//        perfectSquareRange(1,100);
+//        armStrongRange(1,200);
+//        StrongRange(1,200);
+//        perfectRange(1,200);
+//        harshandRange(1,100);
+//        abundantRange(1,100);
+//        automorphicRange(1,100);
+//        magicRange(1,100);
+//        neonRange(1,100);
+//        spyRange(1,100);
+//        happyRange(1,15);
+//        sunnyRange(1,100);
+//        disariumRange(1,100);
+//        pronicRange(1,100);
+//        trimorphicRange(1,100);
+//        evilRange(1,100);
+//        System.out.println(happy(7));
+        palindromeRange(1,100);
+       System.out.println(nthPalindrome(4));
+       largest3happy();
+       nthHappy(60);
+       System.out.println(countEven(1234));
+       System.out.println(nDigitHappyEven(7));
+       System.out.println(nthPrime(3));
+       System.out.println(squreroot(48));
+       System.out.println(prime2(5));
+       System.out.println(isprime(5));
+       System.out.println(nDigitNthPrime(10+1));
+       System.out.println(isprime(1000000087));
+
+
+
+
+
+    }
+}
