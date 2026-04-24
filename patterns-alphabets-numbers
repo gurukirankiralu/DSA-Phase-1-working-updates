@@ -1,0 +1,633 @@
+package com.patterns.com;
+
+public class Alphabets {
+    static void A(){
+        int n=9;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i+j==n/2||i-j==-n/2||(i==n/4&& j>i-j&&j<n-i)){
+                    System.out.print(" * ");
+                }else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void B(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i==0&&j!=n/2)||j==0||(i==n/2&&j!=n/2)||(j==n/2&&i!=0&&i!=n/2)||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void C(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i==0&&j!=0)||(j==0&&i!=n/2&&i!=0)||(i==n/2&&j!=0)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void D(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i==0&&j!=n/2)||j==0||(i==n/2&&j!=n/2)||(j==n/2&&i!=0&&i!=n/2)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void E(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||j==0||i==n/2||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void F(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/4;j++){
+                if(i==0||j==0||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void G(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i==0&&j!=n/2)||(j==0&&i!=0)||(i==n/2&&j<=n/4)||(i==n/4&&j>=n/4)||(j==n/4&&i>=n/4)||(j==n/2&&i>=n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void H(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(j==0||i==n/4||j==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void I(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||j==n/4||i==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void J(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||(j==n/4&&i!=n/2)||(i==n/2&&j<n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void K(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(j==0||i+j==n/4||i-j==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void L(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(j==0||(i==n/2&&j<=3*n/8)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void M(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(j==0||(i-j==0&&j<=n/4)||j==n/2||(i+j==n/2&&i<=n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void N(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(j==0||(i-j==0)||j==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void O(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((j==0&&i!=0&&i!=n/2)||(i==0&&j!=0&&j!=n/2)||(j==n/2&&i!=0&&i!=n/2)||(i==n/2&&j!=0&&j!=n/2)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void P(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/4;j++){
+                if(i==0||j==0||i==n/4||(j==n/4&&i<=n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void Q(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((j==0&&i!=0&&i!=n/2)||(i==0&&j!=0&&j!=n/2)||(j==n/2&&i!=0)||(i==n/2&&j!=0)||(i-j==0&&i>n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void R(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i==0&&j<=n/4)||j==0||(j==n/4&&i!=0&&i<=n/4)||(i==n/4&&j<=n/4)||i-j==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void S(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||(j==0&&i<=n/4)||i==n/2||(j==n/2&&i>=n/4)||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void T(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||j==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void U(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((j==0&&i!=n/2)||(i==n/2&&j!=n/2&&j!=0)||(j==n/2&&i!=n/2)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void V(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i-j==0&&i<=n/4)||(i+j==n/2&&i<=n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void W(){
+        int n=9;
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<=n;j++){
+                if((i-j==0&&i<=n/4)||(i+j==n/2&&i<=n/4)||(i-j==-n/2&&i<=n/4)||(i+j==n-1&&i<=n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void X(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i-j==0||i+j==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void Y(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i-j==0&&i<=n/4)||i+j==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void Z(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i+j==n/2)||i==0||i==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n0(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((j==0&&i!=0&&i!=n/2)||(i==0&&j!=0&&j!=n/2)||(j==n/2&&i!=0&&i!=n/2)||(i==n/2&&j!=0&&j!=n/2)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n1(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(j==n/4||(i+j==n/4&&i<=n/4)||i==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n2(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((j==0&&i>=n/4)||i==n/4||i==n/2||i==0||(j==n/2&&i<=n/4)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n3(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==n/4||i==n/2||i==0||j==n/2){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n4(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((j==0&&i<=n/4)||i==n/4||j==(n/2)-1){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n5(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||(j==0&&i<=n/4)||i==n/2||(j==n/2&&i>=n/4)||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n6(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||j==0||(i==n/2&&j!=n/2)||(j==n/2&&i!=n/2&&i>=n/4)||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n7(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if((i==0&&j>=n/4||j==n/2)){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void n8(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||j==0||j==n/2||i==n/2||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void n9(){
+        int n=9;
+        for(int i=0;i<=n/2;i++){
+            for(int j=0;j<=n/2;j++){
+                if(i==0||j==n/2||(j==0&&i<=n/4)||(j==n/2&&i<=n/4)||i==n/4){
+                    System.out.print(" * ");
+                }
+                else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void name(String name){
+        for(int i=0;i<name.length();i++){
+            char ch=name.charAt(i);
+            switch(ch){
+                case 'A': A(); break;
+                case 'B': B(); break;
+                case 'C': C(); break;
+                case 'D': D(); break;
+                case 'E': E(); break;
+                case 'F': F(); break;
+                case 'G': G(); break;
+                case 'H': H(); break;
+                case 'I': I(); break;
+                case 'J': J(); break;
+                case 'K': K(); break;
+                case 'L': L(); break;
+                case 'M': M(); break;
+                case 'N': N(); break;
+                case 'O': O(); break;
+                case 'P': P(); break;
+                case 'Q': Q(); break;
+                case 'R': R(); break;
+                case 'S': S(); break;
+                case 'T': T(); break;
+                case 'U': U(); break;
+                case 'V': V(); break;
+                case 'W': W(); break;
+                case 'X': X(); break;
+                case 'Y': Y(); break;
+                case 'Z': Z(); break;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    public static void main(String[]args){
+        A();
+        B();
+        System.out.println();
+        C();
+        System.out.println();
+        D();
+        System.out.println();
+        E();
+        System.out.println();
+        F();
+        System.out.println();
+        G();
+        System.out.println();
+        H();
+        System.out.println();
+        I();
+        System.out.println();
+        J();
+        System.out.println();
+        K();
+        System.out.println();
+        L();
+        System.out.println();
+        M();
+        System.out.println();
+        N();
+        System.out.println();
+        O();
+        System.out.println();
+        P();
+        System.out.println();
+        Q();
+        System.out.println();
+        R();
+        System.out.println();
+        S();
+        System.out.println();
+        T();
+        System.out.println();
+        U();
+        System.out.println();
+        V();
+        System.out.println();
+        W();
+        System.out.println();
+        X();
+        System.out.println();
+        Y();
+        System.out.println();
+        Z();
+        System.out.println();
+        n0();
+        System.out.println();
+        n1();
+        System.out.println();
+        n2();
+        System.out.println();
+        n3();
+        System.out.println();
+        n4();
+        System.out.println();
+        n5();
+        System.out.println();
+        n6();
+        System.out.println();
+        n7();
+        System.out.println();
+        n8();
+        System.out.println();
+        n9();
+        name("GURU");
+
+
+
+
+
+
+
+
+
+    }
+}
