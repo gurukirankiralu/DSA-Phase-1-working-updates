@@ -1,0 +1,219 @@
+package com.arrays.skillBout;
+
+import java.util.Arrays;
+
+public class practice {
+    static int sumOfArray(int[]arr){
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum+=arr[i];
+        }
+        return sum;
+    }
+    static int productOfArray(int[]arr){
+        int product=1;
+        for(int i=0;i<arr.length;i++){
+            product*=arr[i];
+        }
+        return product;
+    }
+    static int searchElement(int[]arr,int n){
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==n){
+                return i  ;
+            }
+        }
+        return -1;
+    }
+    static int max(int[] arr){
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+        return max;
+    }
+    static int secMax(int[] arr){
+        int firstMax=Integer.MIN_VALUE;
+        int secMax=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>firstMax){
+                secMax=firstMax;
+                firstMax=arr[i];
+            }
+            else if(arr[i]>secMax&&arr[i]!=firstMax) {
+                secMax=arr[i];
+            }
+        }
+        return secMax;
+    }
+    static void evenOdd(int[]arr){
+        int evenC=0;
+        int oddC=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                evenC++;
+            }
+            else {
+                oddC++;
+            }
+        }
+        System.out.println("even count :"+evenC+" odd count :"+oddC);
+    }
+    static int count(int n){
+        int count=0;
+        while(n>0){
+            n/=10;
+            count++;
+        }
+        return count;
+    }
+     static int []positionCount(int []arr){
+        for(int i=0;i<arr.length;i++){
+            int count=count(arr[i]);
+            arr[i]=count;
+        }
+        return arr;
+    }
+    static boolean prime(int n){
+        if(n==1){
+            return false;
+        }
+        for(int i=2;i<=Math.sqrt(n);i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    static int[] primeElement(int[]arr){
+        for(int i=0;i<arr.length;i++){
+            if(prime(arr[i])){
+                arr[i]=1;
+            }
+            else {
+                arr[i]=0;
+            }
+        }
+        return arr;
+    }
+    static String  binaryRepresent(int n){
+        StringBuilder sb=new StringBuilder();
+        while(n>0){
+            int digit=n%2;
+            sb.append(digit);
+            n/=2;
+        }
+        return sb.reverse().toString();
+
+    }
+    static void binaryFormate(int[]arr){
+        String []binary=new String[arr.length];
+        for(int i=0;i<arr.length;i++){
+            binary[i]=binaryRepresent(arr[i]);
+        }
+        System.out.println(Arrays.toString(binary));
+    }
+    static int oneBinaryCount(int n){
+       int  count=0;
+       while (n>0){
+           if(n%2==1){
+               count++;
+           }
+           n/=2;
+       }
+       return count;
+    }
+    static void oneBReplacement(int []arr){
+        for(int i=0;i<arr.length;i++){
+            arr[i]=oneBinaryCount(arr[i]);
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void quotientReminder(int []arr) {
+        int[] quotient = new int[arr.length];
+        int[] reminder = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            quotient[i]=arr[i]/arr.length;
+            reminder[i]=arr[i]%arr.length;
+        }
+        System.out.println(Arrays.toString(quotient));
+        System.out.println(Arrays.toString(reminder));
+    }
+    static void swapAdjesent(int []arr){
+        int j=1;
+        for(int i=0;i<arr.length&&j<arr.length;i+=2){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            j+=2;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+    static void reverse(int []arr){
+        int i=0;
+        int j=arr.length-1;
+        while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+    static void swapFirstLast(int []arr){
+        int i=0;
+        int j=arr.length-1;
+       int []newArr=new int[arr.length];
+       for(int k=0;k<arr.length;k++){
+           if(k%2==0) {
+               newArr[k] = arr[i];
+               i++;
+           }
+           else {
+               newArr[k ] = arr[j];
+               j--;
+           }
+
+
+       }
+        System.out.println(Arrays.toString(newArr));
+    }
+    static void groupEven(int[]arr){
+        int j=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                j++;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void main(String [] args) {
+        int[] arr = {50,4,59,23,10};
+        System.out.println(sumOfArray(arr));
+        System.out.println(productOfArray(arr));
+       System.out.println(searchElement(arr,6));
+       System.out.println(max(arr));
+       System.out.println(secMax(arr));
+       evenOdd(arr);
+     //  System.out.println(Arrays.toString(positionCount(arr)));
+       //System.out.println(Arrays.toString(primeElement(arr)));
+     //  binaryFormate(arr);
+       // oneBReplacement(arr);
+       // quotientReminder(arr);
+        System.out.println(Arrays.toString(arr));
+        //swapAdjesent(arr);
+       // reverse(arr);
+        //swapFirstLast(arr);
+        groupEven(arr);
+
+
+    }
+}
